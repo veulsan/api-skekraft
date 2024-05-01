@@ -1,6 +1,3 @@
-# This is a sample Python script.
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 from external.skekraft.api import SkekraftAPI
 import asyncio
 from datetime import datetime, timedelta
@@ -35,12 +32,24 @@ async def main():
     # Elcertifikatsavgift 0.75 öre / kWh
 
     # Login
-    #login_response = await skekraft_api.login("username", "password")
-    #print(f"Login successful. Token: {login_response['Dst']}")
     token = "your-token-here"
+    login_response = await skekraft_api.login("username", "password")
+    if login_response is not None and int(login_response['ErrNumber']) == 1:
+        log(f"Login successful. Token: {login_response['Dst']}")
+        token = login_response['Dst']
+    else:
+        log(f"Login Failed: {login_response['ErrDescription']}")
+        await skekraft_api.logout()
+        exit(-1)
+
     token = await skekraft_api.refresh(token)
-    log(f"Response: {token}")
-    #if (int(login_response['ErrNumber']) == 1):
+    log(f"token={token}")
+    if (token == "False"):
+        log(f"Invalid token {token}")
+        exit(-1)
+    else:
+        log(f"Login successful. Token: {token}")
+
     if token == "true":
         log(f"Login successful. Token: {token}")
         # Get user profile
