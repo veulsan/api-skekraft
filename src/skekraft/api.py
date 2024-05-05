@@ -1,4 +1,4 @@
-from HttpClient import HttpClient
+from skekraft.HttpClient import HttpClient
 from datetime import datetime, timedelta
 
 from skekraft.const import (
