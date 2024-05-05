@@ -1,7 +1,7 @@
-from .HttpClient import HttpClient
+from HttpClient import HttpClient
 from datetime import datetime, timedelta
 
-from .const import (
+from skekraft.const import (
     CMD_LOGIN,
     CMD_REFRESH,
     CMD_LOGOUT,

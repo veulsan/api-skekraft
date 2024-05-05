@@ -4,7 +4,7 @@ from typing import List
 from typing import Optional
 
 from aiohttp import ClientSession
-from .const import (
+from skekraft.const import (
     CMD_LOGIN,
     CMD_REFRESH,
     CLIENT_HEADERS,

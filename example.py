@@ -1,7 +1,8 @@
-from external.skekraft.api import SkekraftAPI
+from api import SkekraftAPI
 import asyncio
 from datetime import datetime, timedelta
-import time
+
+
 def log(message):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{timestamp}] {message}")

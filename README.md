@@ -5,8 +5,9 @@ If you do not have it you can go to mina sidor, https://minasidor.skekraft.se/lo
 
 ### Examples
 Simple example on how to login with username & password:
+
 ```python
-from external.skekraft.api import SkekraftAPI
+from api import SkekraftAPI
 import asyncio
 
 base_url = "https://externalapi.skekraft.se/api/MySkekraft"
@@ -23,8 +24,9 @@ else:
 ```
 
 You can also use a token if you have one. Do remember to refresh it regurlary do not invalide it:
+
 ```python
-from external.skekraft.api import SkekraftAPI
+from api import SkekraftAPI
 import asyncio
 
 base_url = "https://externalapi.skekraft.se/api/MySkekraft"
