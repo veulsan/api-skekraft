@@ -1,4 +1,4 @@
-from api import SkekraftAPI
+from skekraft.api import SkekraftAPI
 import asyncio
 from datetime import datetime, timedelta
 
